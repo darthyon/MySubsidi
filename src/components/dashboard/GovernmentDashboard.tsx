@@ -140,11 +140,6 @@ export const GovernmentDashboard: React.FC = () => {
     }
   }
   
-  const getPeriodLabel = (granularity: string, period: string) => {
-    const options = getPeriodOptions(granularity)
-    return options.find(option => option.value === period)?.label || 'August'
-  }
-  
   const handleGranularityChange = (granularity: string, setPeriod: (period: string) => void) => {
     switch (granularity) {
       case 'month': setPeriod('august'); break
@@ -156,9 +151,6 @@ export const GovernmentDashboard: React.FC = () => {
   const horizontalBarData = assignColorsBasedOnValue(horizontalBarBaseData)
   const fleetCardData = assignColorsBasedOnValue(fleetCardBaseData)
   
-  const highestProvider = horizontalBarData[0]
-  const highestUsage = (highestProvider.value / 1000000).toFixed(1)
-
   return (
     <div className="p-6 space-y-6">
       {/* Header */}

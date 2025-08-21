@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { CreditCard, Search, Download, Activity, Flag, XCircle } from 'lucide-react'
-import { formatCurrency } from '@/lib/utils'
-import { transactionHistory } from '@/data/mockData'
+import { CreditCard, Download, Activity, Flag, XCircle } from 'lucide-react'
 
 const cardData = [
   {
@@ -79,48 +77,6 @@ const cardData = [
 ]
 
 export const CardControl: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState('')
-  const [statusFilter, setStatusFilter] = useState('all')
-
-  const filteredCards = cardData.filter(card => {
-    const matchesSearch = card.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         card.vehicleId.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         card.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         card.driver.toLowerCase().includes(searchTerm.toLowerCase())
-    const matchesStatus = statusFilter === 'all' || card.status.toLowerCase() === statusFilter
-    
-    return matchesSearch && matchesStatus
-  })
-
-  const getStatusColor = (status: string) => {
-    switch (status.toLowerCase()) {
-      case 'active': return 'success'
-      case 'flagged': return 'warning'
-      case 'suspended': return 'destructive'
-      default: return 'secondary'
-    }
-  }
-
-  const getUsagePercentage = (used: number, limit: number) => {
-    return Math.round((used / limit) * 100)
-  }
-
-  const getUsageColor = (percentage: number) => {
-    if (percentage > 100) return 'bg-red-500'
-    if (percentage > 80) return 'bg-orange-500'
-    return 'bg-[#33bd6a]'
-  }
-
-  const handleSuspendCard = (cardId: string) => {
-    // In real app, this would call an API
-    console.log(`Suspending card: ${cardId}`)
-  }
-
-  const handleActivateCard = (cardId: string) => {
-    // In real app, this would call an API
-    console.log(`Activating card: ${cardId}`)
-  }
-
   const totalCards = cardData.length
   const activeCards = cardData.filter(c => c.status === 'Active').length
   const flaggedCards = cardData.filter(c => c.status === 'Flagged').length
