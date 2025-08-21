@@ -11,7 +11,6 @@ import {
   FileText, 
   Settings,
   LogOut,
-  Bell,
   Activity
 } from 'lucide-react'
 

@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Bell, DollarSign, CreditCard, Building2, Shield, AlertTriangle, TrendingUp, Activity } from 'lucide-react'
 import { KPICard } from './KPICard'
-import { subsidyData, kpiData, serviceProviderData, anomalies, apiHealthData } from '@/data/mockData'
-import { formatCurrency, formatDate } from '@/lib/utils'
+import { subsidyData, kpiData, anomalies, apiHealthData } from '@/data/mockData'
+import { formatCurrency } from '@/lib/utils'
 
 // Blue color palette from darkest to lightest (WCAG compliant)
 const blueColorPalette = [

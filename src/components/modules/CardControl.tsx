@@ -1,11 +1,7 @@
 import React, { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Input } from '@/components/ui/input'
-import { CreditCard, AlertTriangle, Search, Download, Ban, CheckCircle, Activity, Flag, XCircle } from 'lucide-react'
+import { CreditCard, Search, Download, Activity, Flag, XCircle } from 'lucide-react'
 import { formatCurrency } from '@/lib/utils'
 import { transactionHistory } from '@/data/mockData'
 
